@@ -53,4 +53,4 @@ export default class QueryAPI {
   #incrementPage() {
     this.page += 1;
   }
-}
+};
