@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import QueryAPI from './js/query-api.js';
+import QueryAPI from './js/query-api';
 import {createMarkup} from './js/createMarkup';
 
 const queryAPI = new QueryAPI();
