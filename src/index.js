@@ -24,10 +24,10 @@ window.addEventListener('scroll', throttle(makeInfScroll, 500));
 async function onSearch(e) {
   e.preventDefault();
 
-  const value = e.currentTarget.elements.searchQuery.value;
-  if (value.trim() === "") {
+  const value = e.currentTarget.elements.searchQuery.value.trim();
+  if (value === "") {
     notifyOfEmptyInput();
-    
+    return;
   } else {
     queryAPI.setSearchQuery(value);
   }
