@@ -42,8 +42,8 @@ export default class QueryAPI {
     if (!response.ok) {
       throw new Error(response.status);
     }
-
-    return response.json();
+    if (this.#searchQuery !==""){
+    return response.json();}
   }
 
   #resetPage() {

@@ -25,9 +25,12 @@ async function onSearch(e) {
   e.preventDefault();
 
   const value = e.currentTarget.elements.searchQuery.value;
-
-  queryAPI.setSearchQuery(value);
-
+  if (value.trim() === "") {
+    notifyOfEmptyInput();
+    
+  } else {
+    queryAPI.setSearchQuery(value);
+  }
   try {
     const data = await queryAPI.fetchImgs();
     onSearchFinished(data);
@@ -104,6 +107,10 @@ function notifyOfMatchesNum(totalHits) {
 
 function notifyOfEndOfResults() {
   Notify.info("We're sorry, but you've reached the end of search results.");
+}
+
+function notifyOfEmptyInput() {
+  Notify.info("Please, enter query for search!");
 }
 
 function clearGallery() {
